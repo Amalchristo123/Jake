@@ -723,7 +723,6 @@ async def auto_filter(client, msg, spoll=False):
 
 
 async def advantage_spell_chok(msg, search, reply):
-    _, user, movie_ = query.data.split('#')
     if int(user) != 0 and query.from_user.id != int(user):
         return await query.answer("okDa", show_alert=True)
     k = await msg.reply_text(

@@ -623,7 +623,7 @@ async def auto_filter(client, msg, spoll=False):
             files, offset, total_results = await get_search_results(search.lower(), offset=0, filter=True)
             if not files:
                 if settings["spell_check"]:
-                    return await advantage_spell_chok(msg, reply, search)
+                    return await advantage_spell_chok(msg, search, reply)
                 else:
                     return
         else:
@@ -722,7 +722,7 @@ async def auto_filter(client, msg, spoll=False):
         await msg.message.delete()
 
 
-async def advantage_spell_chok(msg, req, reply, search):
+async def advantage_spell_chok(msg, search, reply):
     _, user, movie_ = query.data.split('#')
     if int(user) != 0 and query.from_user.id != int(user):
         return await query.answer("okDa", show_alert=True)

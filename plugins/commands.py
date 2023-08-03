@@ -58,11 +58,8 @@ async def start(client, message):
             parse_mode=enums.ParseMode.HTML
         )
         return
-    if AUTH_CHANNEL and not await is_subscribed(client, message):
-        try:
-            invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL))
-        except ChatAdminRequired:
-            logger.erif len(message.command) == 2 and message.command[1] in [
+    
+    if len(message.command) == 2 and message.command[1] in [
         "subscribe",
         "error",
         "okay",

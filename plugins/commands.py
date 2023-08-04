@@ -42,6 +42,22 @@ async def start(client, message):
         await db.add_user(message.from_user.id, message.from_user.first_name)
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
+        h = await message.reply_text(
+            text=f"<code>.</code>",
+            parse_mode=enums.ParseMode.HTML
+        )
+        await asyncio.sleep(0.5)
+        k = await h.edit_text(
+            text=f"<code>. .</code>",
+            parse_mode=enums.ParseMode.HTML
+        )
+        await asyncio.sleep(0.5)
+        m = await k.edit_text(
+            text=f"<code>. . .</code>",
+            parse_mode=enums.ParseMode.HTML
+        )
+        await asyncio.sleep(0.5)
+        await m.delete()
         buttons = [[
             InlineKeyboardButton('𝗔𝗱𝗱 𝗠𝗲 𝗧𝗼 𝗬𝗼𝘂𝗿 𝗚𝗿𝗼𝘂𝗽', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
@@ -51,6 +67,7 @@ async def start(client, message):
             InlineKeyboardButton('𝗛𝗲𝗹𝗽', callback_data='help'),
             InlineKeyboardButton('𝗔𝗯𝗼𝘂𝘁', callback_data='about')
         ]]
+        await asyncio.sleep(0.5)
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_text(
             text=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
@@ -71,6 +88,22 @@ async def start(client, message):
         if message.command[1] == "subscribe":
             await ForceSub(client, message)
             return
+        h = await message.reply_text(
+            text=f"<code>.</code>",
+            parse_mode=enums.ParseMode.HTML
+        )
+        await asyncio.sleep(0.5)
+        k = await h.edit_text(
+            text=f"<code>. .</code>",
+            parse_mode=enums.ParseMode.HTML
+        )
+        await asyncio.sleep(0.5)
+        m = await k.edit_text(
+            text=f"<code>. . .</code>",
+            parse_mode=enums.ParseMode.HTML
+        )
+        await asyncio.sleep(0.5)
+        await m.delete()
         buttons = [[
             InlineKeyboardButton('𝗔𝗱𝗱 𝗠𝗲 𝗧𝗼 𝗬𝗼𝘂𝗿 𝗚𝗿𝗼𝘂𝗽', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[

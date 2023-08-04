@@ -711,25 +711,21 @@ async def auto_filter(client, msg, spoll=False):
                                       reply_markup=InlineKeyboardMarkup(btn))
             await asyncio.sleep(300)
             await d.delete()
-            await message.delete()
         except (MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty):
             pic = imdb.get('poster')
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
             k = await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
             await asyncio.sleep(300)
             await k.delete()
-            await message.delete()
         except Exception as e:
             logger.exception(e)
             l = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
             await asyncio.sleep(300)
             await l.delete()
-            await message.delete()
     else:
         h = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(300)
         await h.delete()
-        await message.delete()
     if spoll:
         await msg.message.delete()
 
@@ -745,7 +741,6 @@ Click the google button and check spelling""",
     )
     await asyncio.sleep(60)
     await k.delete()
-    await message.delete()
 
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id

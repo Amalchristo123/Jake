@@ -1,8 +1,8 @@
 import re
 from os import environ
 
-CAP_TXT = """𝗙𝗶𝗹𝗲 𝗦𝗶𝘇𝗲 : {file_size}
-𝗙𝗶𝗹𝗲 𝗡𝗮𝗺𝗲 : {file_name}
+CAP_TXT = """𝗙𝗶𝗹𝗲 𝗦𝗶𝘇𝗲 : <code>{file_size}</code>
+𝗙𝗶𝗹𝗲 𝗡𝗮𝗺𝗲 : <code>{file_name}</code>
 
  𝗚𝗿𝗼𝘂𝗽 : https://t.me/+tDg3C_j8BM40YjA1"""
 id_pattern = re.compile(r'^.\d+$')

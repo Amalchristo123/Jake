@@ -9,7 +9,7 @@ class JoinReqs:
 
         if JOIN_REQS_DB:
             self.client = motor.motor_asyncio.AsyncIOMotorClient(JOIN_REQS_DB)
-            self.db = self.client["JoinReqs"]
+            self.db = self.client["JoinReqss"]
             self.col = self.db[str(REQ_CHANNEL)]
         else:
             self.client = None

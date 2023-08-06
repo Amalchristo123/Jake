@@ -36,15 +36,15 @@ AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_chan
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 REQ_CHANNEL = environ.get("REQ_CHANNEL", "1001833286468")
 REQ_CHANNEL = int(REQ_CHANNEL) if REQ_CHANNEL and id_pattern.search(REQ_CHANNEL) else False
-JOIN_REQS_DB = environ.get("DATABASE_URI", "mongodb+srv://5:5@cluster0.oecuv.mongodb.net/?retryWrites=true&w=majority")
+JOIN_REQS_DB = environ.get("DATABASE_URI", "mongodb+srv://1:1@cluster0.rzg8efp.mongodb.net/?retryWrites=true&w=majority")
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://5:5@cluster0.oecuv.mongodb.net/?retryWrites=true&w=majority")
-DATABASE_NAME = environ.get('DATABASE_NAME', "ClusterZee")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://1:1@cluster0.rzg8efp.mongodb.net/?retryWrites=true&w=majority")
+DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Others
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001837922491'))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '1001837922491'))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'zib_discussion')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
 IMDB = is_enabled((environ.get('IMDB', "False")), False)

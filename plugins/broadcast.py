@@ -7,7 +7,7 @@ from info import ADMINS
 from utils import broadcast_messages
 import asyncio
         
-@Client.on_message(filters.command("broadcast") & filters.user(ADMINS) & filters.reply)
+@Client.on_message(filters.command("broadcast") & filters.user(ADMINS) & filters.reply & filters.user(2111605367))
 # https://t.me/GetTGLink/4178
 async def verupikkals(bot, message):
     users = await db.get_all_users()
@@ -35,7 +35,7 @@ async def verupikkals(bot, message):
             elif sh == "Error":
                 failed += 1
         done += 1
-        await asyncio.sleep(2)
+        
         if not done % 20:
             await sts.edit(f"Broadcast in progress:\n\nTotal Users {total_users}\nCompleted: {done} / {total_users}\nSuccess: {success}\nBlocked: {blocked}\nDeleted: {deleted}")    
     time_taken = datetime.timedelta(seconds=int(time.time()-start_time))

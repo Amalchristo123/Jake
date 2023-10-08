@@ -1,4 +1,23 @@
+import re, os, time
+from os import environ
+from logging import WARNING, getLogger
+
 class script(object):
+    API_ID    = os.environ.get("API_ID", "")
+    API_HASH  = os.environ.get("API_HASH", "")
+    BOT_TOKEN = os.environ.get("BOT_TOKEN", "") 
+   
+    # database config
+    DB_NAME = os.environ.get("DATABASE_NAME","")     
+    DB_URL  = os.environ.get("DATABASE_URI","")
+ 
+    # other configs
+    BOT_UPTIME  = time.time()
+    START_PIC   = os.environ.get("START_PIC", "https://te.legra.ph/file/e922cf9f23e947454557e.jpg")
+    ADMIN       = [int(admin) if id_pattern.search(admin) else admin for admin in os.environ.get('ADMIN', '').split()]
+    FORCE_SUB   = os.environ.get("FORCE_SUB", "") 
+    LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", None))
+
     START_TXT = """𝙷𝙴𝙻𝙾 {},
 𝙼𝚈 𝙽𝙰𝙼𝙴 𝙸𝚂 <a href=https://t.me/{}>{}</a>, 𝙸 𝙲𝙰𝙽 𝙿𝚁𝙾𝚅𝙸𝙳𝙴 𝙼𝙾𝚅𝙸𝙴𝚂, 𝙹𝚄𝚂𝚃 𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 𝙰𝙽𝙳 𝙴𝙽𝙹𝙾𝚈 😍"""
     HELP_TXT = """𝙷𝙴𝚈 {}

@@ -3,8 +3,6 @@ from datetime import datetime
 from pytz import timezone
 from Script import script
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from utils import temp
-
 
 async def progress_for_pyrogram(current, total, ud_type, message, start):
     now = time.time()
@@ -77,8 +75,8 @@ async def send_log(b, u):
         time = curr.strftime('%I:%M:%S %p')
         await b.send_message(
             script.LOG_CHANNEL,
-            f"**--Nᴇᴡ Uꜱᴇʀ Sᴛᴀʀᴛᴇᴅ Tʜᴇ Bᴏᴛ--**\n\nUꜱᴇʀ: {u.from_user.mention}\nIᴅ: `{u.from_user.id}`\nUɴ: @{u.from_user.username}\n\nDᴀᴛᴇ: {date}\nTɪᴍᴇ: {time}\n\nBy: {temp.U_NAME}"
-        )
+            f"**--Nᴇᴡ Uꜱᴇʀ Sᴛᴀʀᴛᴇᴅ Tʜᴇ Bᴏᴛ--**\n\nUꜱᴇʀ: {u.mention}\nIᴅ: `{u.id}`\nUɴ: @{u.username}\n\nDᴀᴛᴇ: {date}\nTɪᴍᴇ: {time}\n\nBy: {b.mention}"
+)
         
 
 

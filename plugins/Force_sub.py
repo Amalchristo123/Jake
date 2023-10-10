@@ -23,7 +23,7 @@ async def not_subscribed(_, client, message):
 async def forces_sub(client, message):
     buttons = [[InlineKeyboardButton(text="📢 Join Update Channel 📢", url=f"https://t.me/+SVo1iv9lPmxjYzc1")
              ],[
-                InlineKeyboardButton("↻ Tʀʏ Aɢᴀɪɴ", callback_data=f"start")]]
+                InlineKeyboardButton("↻ Tʀʏ Aɢᴀɪɴ", callback_data="start")]]
     text = "Sᴏʀʀy Dᴜᴅᴇ Yᴏᴜ'ʀᴇ Nᴏᴛ Jᴏɪɴᴇᴅ My Cʜᴀɴɴᴇʟ 😐. Sᴏ Pʟᴇᴀꜱᴇ Jᴏɪɴ Oᴜʀ Uᴩᴅᴀᴛᴇ Cʜᴀɴɴᴇʟ Tᴏ Cᴏɴᴛɪɴᴜᴇ"
     try:
         user = await client.get_chat_member(script.FORCE_SUB, message.from_user.id)    
